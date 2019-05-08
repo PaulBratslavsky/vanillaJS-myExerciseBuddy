@@ -34,6 +34,11 @@ i {
   flex-direction: row;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .space-between-row {
   justify-content: space-between
 }
@@ -41,6 +46,7 @@ i {
 .align-center-row {
   align-items: center;
 }
+
 
 /*********************************************
     3.  HEADER
@@ -65,19 +71,50 @@ i {
     4.  NAVIGATION MODAL
 *********************************************/
 
-.modal {
+#modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgb(255, 0, 0, 0.5);
+  background: rgba(11, 84, 102, 0.8);
 
   display: none;
 
 }
 
+#main-nav {
+  width: 100vw;
+  height: 100vh; 
+}
 
+.main-nav__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: yellow;
+  height: 100%;
+  width: 100%;
+}
+
+.main-nav__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center !important;
+  
+  background: red;
+  color: #eee;
+
+  font-size: 1.4rem;
+  font-weight: bold;
+
+  width: 100%;
+  min-height: 50px;
+  margin: 0.075rem;
+}
 /*********************************************
     4.  MAIN VIEW
 *********************************************/

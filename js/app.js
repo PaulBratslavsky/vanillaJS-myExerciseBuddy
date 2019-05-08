@@ -1,13 +1,71 @@
 (() => {
-  console.log('ready');
 
-  // ELEMENTS
+  /**************************************************
+      1. GLOBAL VARIABLES
+  **************************************************/
+      
+  // GLOABAL VARIABLES
+  let view = 'home';
+
+
+  /**************************************************
+      2. GLOBAL ELEMENTS
+  **************************************************/
+
+  // GLOBAL ELEMENTS
   const mainView = document.getElementById('view');
-  console.log(mainView);
+  const modalWindow = document.getElementById('modal');
 
-  // FUNCTIONS
+  /**************************************************
+      3. HANDLE CONDITIONAL RENDERING
+  **************************************************/
+
+  switch (view) {
+    case 'home': {
+      // GET DATA FROM FIRESTORE
+      db.collection('exercise').get().then( (snapshot) => {
+        snapshot.docs.forEach( item => {
+        showAndCreateExerciseSelection(item);
+        });
+      });
+      console.log('home');
+      break;
+    }
+
+    case 'other': {
+      console.log('other');
+    }
+
+    default:
+      return;
+  }
+  /**************************************************
+      4. HANDLE MODAL AND NAVIGATION
+  **************************************************/ 
+
+  const showMenu = document.getElementById('show-menu');
+  showMenu.addEventListener('click', () => {
+    modalWindow.style.display = 'block';
+  })
+
+  modalWindow.addEventListener('click', () => {
+    modalWindow.style.display = 'none';
+
+  });
+
+  const menuItem = document.querySelectorAll('.main-nav__item');
+  menuItem.forEach( item => {
+    item.addEventListener('click', () => {
+      if (item)
+      console.log(item, 'clicked');
+    })
+  });
+  /**************************************************
+      4. GLOBAL FUNCTIONS
+  **************************************************/
+
+  // HANDLES LIST VIEW RENDER FROM DATABASE
   const showAndCreateExerciseSelection = (item) => {
-    console.log(item.data());
     const div = document.createElement('div');
 
     div.setAttribute('data-id', item.id);
@@ -59,13 +117,6 @@
     
   }
 
-   // GET DATA FROM FIRESTORE
-   db.collection('exercise').get().then( (snapshot) => {
-    snapshot.docs.forEach( item => {
-      showAndCreateExerciseSelection(item);
-      console.log(mainView);
-      console.log(mainView);
-    });
-  });
+  
 
 })();
