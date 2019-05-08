@@ -82,10 +82,13 @@ i {
     4.  MAIN VIEW
 *********************************************/
 
-#view {
+.exercise-card-view {
   background: red;
-  padding: 1rem
+  padding: 1rem;
+  border-bottom: black solid 5px;
 }
+
+
 
 
 

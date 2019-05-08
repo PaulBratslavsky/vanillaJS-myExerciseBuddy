@@ -28,16 +28,6 @@
     const deleteVideo = document.createElement('i');
     deleteVideo.classList.add('delete-video', 'far', 'fa-trash-alt');
 
-    /*
-    div.innerHTML = `
-      <h1>${item.data().videoTitle}</h1>
-      <p>${item.data().videoDescription}</p>
-      <i class="play-video fas fa-video"></i>
-      <i class="add-to-workout far fa-plus-square"></i>
-      <i class="delete-video far fa-trash-alt"></i>
-      `;
-    */
-
     div.appendChild(videoTitle);
     div.appendChild(videoDescription);
     div.appendChild(playVideo);
@@ -62,6 +52,7 @@
 
     deleteVideo.addEventListener('click', (event) => {
       let id = event.target.parentElement.getAttribute('data-id');
+      mainView.removeChild(div);
       event.stopPropagation();
       console.log('DeleteButton Clicked', id);
     })
