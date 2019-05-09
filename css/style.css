@@ -142,8 +142,16 @@ i {
 
 .exercise-card-view {
   background: red;
-  padding: 1rem;
   border-bottom: black solid 5px;
+  padding-bottom: 1rem;
+}
+
+.exercise-card-view .item-header {
+  padding: 1rem 1rem 0 1rem;
+}
+
+.exercise-card-view p {
+  padding: 0 1rem;
 }
 
 

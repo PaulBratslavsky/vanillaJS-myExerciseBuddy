@@ -71,18 +71,6 @@ playVideo.classList.add('play-video', 'fas', 'fa-video');
 const deleteVideo = document.createElement('i');
 deleteVideo.classList.add('delete-video', 'far', 'fa-trash-alt');
 
-titleContainer.appendChild(videoTitle);
-
-buttonContainer.appendChild(playVideo);
-buttonContainer.appendChild(addToWorkout);
-buttonContainer.appendChild(deleteVideo);
-
-headerContainer.appendChild(titleContainer);
-headerContainer.appendChild(buttonContainer);
-
-div.appendChild(headerContainer);
-div.appendChild(videoDescription);
-
 const videoDiv = document.createElement('div');
   videoDiv.classList.add('video-wrapper', 'hide');
 
@@ -101,7 +89,22 @@ const videoDiv = document.createElement('div');
     </iframe>
   `;
 
-mainView.appendChild(videoDiv);
+titleContainer.appendChild(videoTitle);
+
+buttonContainer.appendChild(playVideo);
+buttonContainer.appendChild(addToWorkout);
+buttonContainer.appendChild(deleteVideo);
+
+headerContainer.appendChild(titleContainer);
+headerContainer.appendChild(buttonContainer);
+
+div.appendChild(videoDiv);
+div.appendChild(headerContainer);
+div.appendChild(videoDescription);
+
+
+
+
 mainView.appendChild(div);
 
 
